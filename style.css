@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.Titulo{
+    text-align: center;
+}
+
+.Principal{
+    border: 5px;
+    border-color: black;
+    width: 100%;
+    height: 85vh;
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    background-color: rgb(212, 212, 212);
+}
+
+.Principal div{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    background-color: gray;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
