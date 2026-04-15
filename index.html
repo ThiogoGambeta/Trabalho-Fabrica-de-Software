@@ -1,20 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Net Methodical</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neat Methodical</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <h1 class="Titulo">Neat Methodical</h1>
-    </nav>
-    <div class="Principal">
-        <div>Pendentes</div>
-        <div>Fazendo</div>
-        <div>Concluidas</div>
-        <div>Refazer</div>
+  <div class="page">
+    <header class="topo">
+      <h1 class="titulo">Neat Methodical</h1>
+      <button id="btnNovaTarefa" class="nova-tarefa">Add nova tarefa</button>
+    </header>
+
+    <main class="quadro">
+      <section class="coluna coluna-pendentes">
+        <h2>A fazer</h2>
+        <div id="pendente" class="lista-tarefas"></div>
+      </section>
+
+      <section class="coluna coluna-fazendo">
+        <h2>Fazendo</h2>
+        <div id="fazendo" class="lista-tarefas"></div>
+      </section>
+
+      <section class="coluna coluna-concluidas">
+        <h2>Concluídas</h2>
+        <div id="concluida" class="lista-tarefas"></div>
+      </section>
+
+      <section class="coluna coluna-refazer">
+        <h2>Refazer</h2>
+        <div id="refazer" class="lista-tarefas"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal">
+      <h3 id="modalTitulo">Nova tarefa</h3>
+
+      <form id="formTarefa">
+        <input type="hidden" id="tarefaId">
+
+        <label for="tituloInput">Título</label>
+        <input type="text" id="tituloInput" maxlength="60" required>
+
+        <label for="descricaoInput">Descrição</label>
+        <textarea id="descricaoInput" rows="4" maxlength="200"></textarea>
+
+        <label for="statusInput">Status</label>
+        <select id="statusInput" required>
+          <option value="pendente">A fazer</option>
+          <option value="fazendo">Fazendo</option>
+          <option value="concluida">Concluídas</option>
+          <option value="refazer">Refazer</option>
+        </select>
+
+        <div class="modal-acoes">
+          <button type="button" id="btnCancelar" class="btn-secundario">Cancelar</button>
+          <button type="submit" class="btn-principal">Salvar</button>
+        </div>
+      </form>
     </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
